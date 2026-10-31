@@ -1,4 +1,4 @@
-// Creates the database if needed, then applies schema, seed and pending migrations. `--reset` drops everything first.
+
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
