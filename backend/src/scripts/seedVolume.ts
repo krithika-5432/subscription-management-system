@@ -1,6 +1,4 @@
-// Generates synthetic, internally consistent records for development and performance testing.
-// Usage: npm run db:seed:volume -- --customers 40 --subscriptions 120
-//        npm run db:seed:volume -- --customers 3000 --subscriptions 10000
+
 import 'dotenv/config';
 import bcrypt from 'bcrypt';
 import pg from 'pg';
