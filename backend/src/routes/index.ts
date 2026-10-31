@@ -12,7 +12,7 @@ import { adminOnly, customerOnly, internalOnly, requirePermission as can } from 
 
 export const api = Router();
 
-// ---- public
+// public
 
 api.get('/health', (_req, res) => {
   res.json({ success: true, data: { status: 'ok' } });
@@ -27,7 +27,7 @@ api.post('/auth/google', authLimit, auth.google);
 api.post('/auth/forgot-password', authLimit, auth.forgot);
 api.post('/auth/reset-password', authLimit, auth.reset);
 
-// ---- every route below needs a valid session
+// every route below needs a valid session
 
 api.use(authenticate);
 
@@ -40,7 +40,7 @@ api.get('/notifications', sys.notifications);
 api.post('/notifications/read-all', sys.readAllNotifications);
 api.post('/notifications/:id/read', sys.readNotification);
 
-// ---- customer portal
+// customer portal
 
 const me = Router();
 me.use(customerOnly);
@@ -62,7 +62,7 @@ me.get('/invoices/:id/pdf', portal.invoicePdf);
 me.get('/payments', portal.listPayments);
 api.use('/portal', me);
 
-// ---- internal application. Customers are stopped here, whatever the permission below.
+//  internal application. Customers are stopped here, whatever the permission below.
 
 const app = Router();
 app.use(internalOnly);
