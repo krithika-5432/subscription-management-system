@@ -1,7 +1,4 @@
--- Base configuration and synthetic development accounts. All passwords here are for local development only:
---   admin@brightloop.in / Admin@1234     sales@brightloop.in / Sales@1234
---   ops@brightloop.in / Ops@12345        finance@brightloop.in / Finance@1234
---   customer@acme.example / Customer@1234
+
 
 INSERT INTO roles (code, name) VALUES
   ('admin', 'Admin'), ('staff', 'Internal Staff'), ('customer', 'Customer');
